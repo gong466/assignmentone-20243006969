@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Shared spacing values.
+
+    Keeping spacing in dimens.xml means the same amount of padding is used on
+    every screen and can be tuned in one place instead of being hard-coded in
+    each layout file.
+-->
+<resources>
+    <dimen name="spacing_small">8dp</dimen>
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CampusLife - home screen (landscape).
+
+    Identical to res/layout/activity_main.xml except that the four ImageButtons
+    sit next to each other in a single row instead of a 2x2 grid, which suits the
+    extra width of a landscape phone or tablet.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Banner photo, takes 2 shares of the available height -->
+    <ImageView
+        android:id="@+id/imageBanner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:contentDescription="@string/app_name"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_main_banner" />
+
+    <!-- App title - the single hard-coded size allowed by the brief (40sp) -->
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/spacing_small"
+        android:text="@string/app_name"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <!-- One row of four buttons instead of the 2x2 grid used in portrait -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnFacilities"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="@string/facilities"
+            android:onClick="onFacilitiesClick"
+            android:padding="@dimen/spacing_small"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_facilities" />
+
+        <ImageButton
+            android:id="@+id/btnEvents"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="@string/events"
+            android:onClick="onEventsClick"
+            android:padding="@dimen/spacing_small"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_events" />
+
+        <ImageButton
+            android:id="@+id/btnClubs"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="@string/clubs"
+            android:onClick="onClubsClick"
+            android:padding="@dimen/spacing_small"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_clubs" />
+
+        <ImageButton
+            android:id="@+id/btnSupport"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/button_selector"
+            android:contentDescription="@string/support"
+            android:onClick="onSupportClick"
+            android:padding="@dimen/spacing_small"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_btn_support" />
+    </LinearLayout>
+</LinearLayout>

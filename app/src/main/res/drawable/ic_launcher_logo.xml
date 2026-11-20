@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Foreground layer of the CampusLife launcher icon (adaptive icon, API 26+).
+
+    The logo is drawn inside the 66dp safe zone of the 108dp icon canvas so that no
+    launcher mask (circle, squircle, rounded square) ever crops it.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:width="66dp"
+        android:height="66dp"
+        android:drawable="@drawable/img_campuslife_logo"
+        android:gravity="center" />
+</layer-list>

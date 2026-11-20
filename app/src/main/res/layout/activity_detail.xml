@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    CampusLife - detail screen.
+
+    Shows one topic: its picture at the top, the topic heading and the body text.
+    The picture and the text area are sized with weights so they always fit the
+    screen, and the body text scrolls because some topics are several screens
+    long. DetailActivity fills the placeholder text in from res/values/arrays.xml.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/detailRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Topic picture; the green background keeps the white artwork visible -->
+    <ImageView
+        android:id="@+id/detailImage"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/green"
+        android:contentDescription="@string/detail_image_description"
+        android:scaleType="fitCenter" />
+
+    <!-- Topic heading -->
+    <TextView
+        android:id="@+id/detailTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="@dimen/spacing_small"
+        android:text="@string/detail_placeholder_title"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textStyle="bold" />
+
+    <!-- Topic body text: scrolls so long topics stay readable -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:id="@+id/detailContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_small"
+            android:text="@string/detail_placeholder_content"
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
+    </ScrollView>
+</LinearLayout>

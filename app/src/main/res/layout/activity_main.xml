@@ -1,19 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical">
 
+    <!-- 顶部 banner 图：占可用高度的权重 -->
+    <ImageView
+        android:id="@+id/imageBanner"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_main_banner"
+        android:contentDescription="@string/app_name" />
+
+    <!-- 大标题：唯一允许的写死尺寸 40sp -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textTitle"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/app_name"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- 2x2 网格容器 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <!-- 第一行：Facilities + Events -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnFacilities"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/button_selector"
+                android:src="@drawable/img_btn_facilities"
+                android:contentDescription="@string/facilities" />
+
+            <ImageButton
+                android:id="@+id/btnEvents"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/button_selector"
+                android:src="@drawable/img_btn_events"
+                android:contentDescription="@string/events" />
+        </LinearLayout>
+
+        <!-- 第二行：Clubs + Support -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btnClubs"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/button_selector"
+                android:src="@drawable/img_btn_clubs"
+                android:contentDescription="@string/clubs" />
+
+            <ImageButton
+                android:id="@+id/btnSupport"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:background="@drawable/button_selector"
+                android:src="@drawable/img_btn_support"
+                android:contentDescription="@string/support" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

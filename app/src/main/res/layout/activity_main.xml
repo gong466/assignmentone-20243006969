@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+    CampusLife - home screen (portrait).
+
+    Vertical LinearLayout: banner, app title and a 2x2 grid of topic buttons.
+    Every size is expressed with match_parent / wrap_content / weights so the
+    layout adapts to any screen size - the only fixed size is the banner title
+    text size (40sp) required by the brief.
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <!-- 顶部 banner 图：占可用高度的权重 -->
+    <!-- Banner photo, takes 2 shares of the available height -->
     <ImageView
         android:id="@+id/imageBanner"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="2"
+        android:contentDescription="@string/app_name"
         android:scaleType="centerCrop"
-        android:src="@drawable/img_main_banner"
-        android:contentDescription="@string/app_name" />
+        android:src="@drawable/img_main_banner" />
 
-    <!-- 大标题：唯一允许的写死尺寸 40sp -->
+    <!-- App title - the single hard-coded size allowed by the brief (40sp) -->
     <TextView
         android:id="@+id/textTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:padding="8dp"
+        android:padding="@dimen/spacing_small"
         android:text="@string/app_name"
         android:textSize="40sp"
         android:textStyle="bold" />
 
-    <!-- 2x2 网格容器 -->
+    <!-- 2x2 grid: two rows, each row holds two buttons -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
         android:orientation="vertical">
 
-        <!-- 第一行：Facilities + Events -->
+        <!-- Row 1: Facilities + Events -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -44,25 +53,27 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
                 android:background="@drawable/button_selector"
-                android:src="@drawable/img_btn_facilities"
-                android:contentDescription="@string/facilities" />
+                android:contentDescription="@string/facilities"
+                android:onClick="onFacilitiesClick"
+                android:padding="@dimen/spacing_small"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_btn_facilities" />
 
             <ImageButton
                 android:id="@+id/btnEvents"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
                 android:background="@drawable/button_selector"
-                android:src="@drawable/img_btn_events"
-                android:contentDescription="@string/events" />
+                android:contentDescription="@string/events"
+                android:onClick="onEventsClick"
+                android:padding="@dimen/spacing_small"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_btn_events" />
         </LinearLayout>
 
-        <!-- 第二行：Clubs + Support -->
+        <!-- Row 2: Clubs + Support -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -74,22 +85,24 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
                 android:background="@drawable/button_selector"
-                android:src="@drawable/img_btn_clubs"
-                android:contentDescription="@string/clubs" />
+                android:contentDescription="@string/clubs"
+                android:onClick="onClubsClick"
+                android:padding="@dimen/spacing_small"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_btn_clubs" />
 
             <ImageButton
                 android:id="@+id/btnSupport"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="8dp"
-                android:scaleType="fitCenter"
                 android:background="@drawable/button_selector"
-                android:src="@drawable/img_btn_support"
-                android:contentDescription="@string/support" />
+                android:contentDescription="@string/support"
+                android:onClick="onSupportClick"
+                android:padding="@dimen/spacing_small"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_btn_support" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

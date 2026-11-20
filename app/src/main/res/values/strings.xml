@@ -1,7 +1,17 @@
 <resources>
     <string name="app_name">CampusLife</string>
+
+    <!-- Main screen: topic button captions -->
     <string name="facilities">Facilities</string>
     <string name="events">Events</string>
     <string name="clubs">Clubs</string>
     <string name="support">Support</string>
+
+    <!-- Shown as a toast when one of the topic buttons is tapped -->
+    <string name="topic_clicked">%1$s clicked</string>
+
+    <!-- Detail screen placeholders, replaced at runtime from arrays.xml -->
+    <string name="detail_placeholder_title">Topic title</string>
+    <string name="detail_placeholder_content">Topic details will appear here.</string>
+    <string name="detail_image_description">Picture of the selected topic</string>
 </resources>
